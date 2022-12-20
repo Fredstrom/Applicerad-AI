@@ -2,6 +2,8 @@ import torch.cuda
 import torch.nn as nn
 from model_parameters import settings
 
+
+
 class CNN_model(nn.Module):
     def __init__(self, num_classes=2):
         self.width = settings["image_size"][0]
@@ -58,3 +60,4 @@ class CNN_model(nn.Module):
         x = self.fc(x)
 
         return x
+

@@ -1,14 +1,17 @@
 from model_parameters import settings
+from datamanager import DataManager
+from model import CNN_model
+
+import torch
 import torch.nn as nn
+from torchvision.transforms import transforms
 from torch.optim import Adam
 from torch.autograd import Variable
-from model import CNN_model
-import torch
-from datamanager import DataManager
 from glob import glob
+from PIL import Image, ImageDraw, ImageFont
 
 
-def train_model():
+def model_train():
     dm = DataManager()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("---" * 10)
@@ -74,3 +77,39 @@ def train_model():
             print(f"New best: Saved model as 'model_{val_accuracy:.0f}.pth!")
         print(f"Best accuracy: {best_accuracy:.0f}%")
         print("------" * 10)
+
+
+def model_predict(file_name="*"):
+    module = CNN_model()
+    module.load_state_dict(torch.load(settings["model_weights"]))
+    module.eval()
+
+    if file_name != "*":
+        i = Image.open(settings['test_path'] + file_name)
+        predictions = predict_image(module, settings['test_path'] + file_name)
+        fnt = ImageFont.truetype("arial.ttf", 38)
+        txt = ImageDraw.Draw(i)
+        txt.text((120, 50), predictions, font=fnt, fill=(0, 0, 0))
+        i.show()
+
+    else:
+        predictions = [predict_image(module, file) for file in glob(settings['test_path'] + file_name)]
+        print(predictions)
+        return predictions
+
+
+def predict_image(model, image_path: str) -> str:
+    # Load and preprocess the image
+    image = Image.open(image_path)
+    preprocess = transforms.Compose([transforms.Resize(settings["image_size"]), transforms.ToTensor(),
+                                     transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])])
+    image_tensor = preprocess(image).unsqueeze(0)
+
+    model.eval()
+    with torch.no_grad():
+        prediction = model(image_tensor)
+
+    label = prediction.argmax().item()
+    label = "Not Algae" if label == 0 else "Algae"
+    # Return the label(s) as a list of strings
+    return label
