@@ -1,6 +1,6 @@
 import torch.cuda
 import torch.nn as nn
-from model_parameters import settings
+from settings import settings
 
 
 

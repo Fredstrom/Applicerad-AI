@@ -1,4 +1,4 @@
-from model_parameters import settings
+from settings import settings
 from datamanager import DataManager
 from model import CNN_model
 

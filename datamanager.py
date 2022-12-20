@@ -1,5 +1,5 @@
 from torchvision.transforms import transforms
-from model_parameters import settings
+from settings import settings
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 

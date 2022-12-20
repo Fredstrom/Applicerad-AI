@@ -1,5 +1,5 @@
 from train_and_predict import model_train, model_predict
-from model_parameters import settings
+from settings import settings
 
 
 def main():
