@@ -15,5 +15,5 @@ settings = {
     "image_size": (400, 400),
 
     # For testing:
-    "file_name": "forest-2310909_960_720.jpg",  # * = ALL images in test_folder, if you want a specific image, enter filename here.
+    "file_name": "*",  # * = ALL images in test_folder, if you want a specific image, enter filename here.
 }
