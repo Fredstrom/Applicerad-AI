@@ -1,11 +1,9 @@
 from torchvision.datasets import ImageFolder
 import torch
+from train import init_model
 
 def main():
-    train_data = ImageFolder("data_jpg/train")
-    val_data = ImageFolder("data_jpg/val")
-
-    # CNN Training goes here #
+    init_model()
 
 if __name__ == "__main__":
     main()
