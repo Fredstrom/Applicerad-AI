@@ -1,11 +1,13 @@
-from torchvision.datasets import ImageFolder
-import torch
+from train_and_predict import model_train, model_predict
+from settings import settings
+
 
 def main():
-    train_data = ImageFolder("data_jpg/train")
-    val_data = ImageFolder("data_jpg/val")
+    if settings["mode"] == "train":
+        model_train()
+    else:
+        model_predict(settings["file_name"])
 
-    # CNN Training goes here #
 
 if __name__ == "__main__":
     main()
