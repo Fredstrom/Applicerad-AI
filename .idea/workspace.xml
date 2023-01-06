@@ -9,7 +9,6 @@
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Model_results/model_71.pth" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Model_results/model_91.pth" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Model_results/model_93.pth" afterDir="false" />
@@ -813,8 +812,8 @@
       <change afterPath="$PROJECT_DIR$/data_jpg/val/1/637985777286314851_20220910_124715_jpg.rf.0cd336d3a736fec1366edbba50cd6084.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/data_jpg/val/1/637985777504475295_20220910_124727_jpg.rf.851a898dfb32a7db1bfd491117a92f48.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_and_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_and_predict.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1122,7 +1121,7 @@
       <workItem from="1672915935696" duration="197000" />
       <workItem from="1672996372505" duration="1893000" />
       <workItem from="1673001597695" duration="446000" />
-      <workItem from="1673002058767" duration="1510000" />
+      <workItem from="1673002058767" duration="1778000" />
     </task>
     <servers />
   </component>
@@ -1144,7 +1143,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Applicerad_AI$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1673007723406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Applicerad_AI$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1673008176543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Applicerad_AI$model_parameters.coverage" NAME="model_parameters Coverage Results" MODIFIED="1672410684865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Applicerad_AI$train_and_predict.coverage" NAME="train_and_predict Coverage Results" MODIFIED="1673007717900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Applicerad_AI$main.coverage" NAME="main Coverage Results" MODIFIED="1672413471317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
