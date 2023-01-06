@@ -1,11 +1,11 @@
 settings = {
     # This setting decides if we run model_train() or model_predict() -> train/test
-    "mode": "train",
+    "mode": "test",
 
     # File Paths:
-    "data_path": "data_jpg",
-    "test_path": "data_jpg\\test\\",
-    "model_weights": "Model_results\\model_93.pth",
+    "data_path": "nn_model\\data_jpg",
+    "test_path": "nn_model\\data_jpg\\test\\",
+    "model_weights": "nn_model\\Model_results\\model_95.pth",
 
     # For Training:
     "learning_rate": 0.00257,

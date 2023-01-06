@@ -1,6 +1,6 @@
 # Our own options
-Model_results/
-data_jpg/
+nn_model/Model_results/
+nn_model/data_jpg/
 .idea/
 
 

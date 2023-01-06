@@ -1,4 +1,4 @@
-from train_and_predict import model_train, model_predict
+from nn_model.train_and_predict import model_train, model_predict
 from settings import settings
 
 
