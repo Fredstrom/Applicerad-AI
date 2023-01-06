@@ -1,3 +1,5 @@
+import os
+
 from settings import settings
 from datamanager import DataManager
 from model import CNN_model
@@ -72,6 +74,8 @@ def model_train():
         print(f"Epoch: {epoch} / {num_epochs}")
         print(f"Train Loss: {train_loss:.0f}, Train Accuracy: {train_accuracy:.0f}%, Test Accuracy: {val_accuracy:.0f}%")
         if val_accuracy > best_accuracy:
+            if not os.path.exists("Model_results/"):
+                os.mkdir("Model_results/")
             torch.save(model.state_dict(), f'Model_results/model_{val_accuracy:.0f}.pth')
             best_accuracy = val_accuracy
             print(f"New best: Saved model as 'model_{val_accuracy:.0f}.pth!")

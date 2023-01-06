@@ -1,6 +1,6 @@
 settings = {
     # This setting decides if we run model_train() or model_predict() -> train/test
-    "mode": "test",
+    "mode": "train",
 
     # File Paths:
     "data_path": "data_jpg",
