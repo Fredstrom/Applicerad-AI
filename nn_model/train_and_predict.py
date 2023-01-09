@@ -1,5 +1,7 @@
 import os
 
+from PIL.Image import Image
+
 from settings import settings
 from nn_model.datamanager import DataManager
 from nn_model.model import CNN_model
@@ -76,36 +78,22 @@ def model_train():
         if val_accuracy > best_accuracy:
             if not os.path.exists("Model_results/"):
                 os.mkdir("Model_results/")
-            torch.save(model.state_dict(), f'nn_model/Model_results/model_{val_accuracy:.0f}.pth')
+            torch.save(model.state_dict(), f'Model_results/model_{val_accuracy:.0f}.pth')
             best_accuracy = val_accuracy
             print(f"New best: Saved model as 'model_{val_accuracy:.0f}.pth!")
         print(f"Best accuracy: {best_accuracy:.0f}%")
         print("------" * 10)
 
 
-def model_predict(file_name="*"):
-    module = CNN_model()
-    module.load_state_dict(torch.load(settings["model_weights"]))
-    module.eval()
+def predict_image(folder, file):
+    image_path = folder + file
+    model = CNN_model()
+    model.load_state_dict(torch.load(settings["model_weights"]))
+    model.eval()
 
-    if file_name != "*":
-        i = Image.open(settings['test_path'] + file_name)
-        predictions = predict_image(module, settings['test_path'] + file_name)
-        fnt = ImageFont.truetype("arial.ttf", 38)
-        txt = ImageDraw.Draw(i)
-        txt.text((120, 50), predictions, font=fnt, fill=(0, 0, 0))
-        i.show()
-
-    else:
-        predictions = [predict_image(module, file) for file in glob(settings['test_path'] + file_name)]
-        print(predictions)
-        return predictions
-
-
-def predict_image(model, image_path: str) -> str:
-    # Load and preprocess the image
     image = Image.open(image_path)
-    preprocess = transforms.Compose([transforms.Resize(settings["image_size"]), transforms.ToTensor(),
+    preprocess = transforms.Compose([transforms.Resize(settings["image_size"]),
+                                     transforms.ToTensor(),
                                      transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])])
     image_tensor = preprocess(image).unsqueeze(0)
 
@@ -113,7 +101,6 @@ def predict_image(model, image_path: str) -> str:
     with torch.no_grad():
         prediction = model(image_tensor)
 
-    label = prediction.argmax().item()
-    label = "Not Algae" if label == 0 else "Algae"
-    # Return the label(s) as a list of strings
-    return label
+    label = prediction.argmax().int()
+    return "Algae" if label == 1 else "Not Algae"
+

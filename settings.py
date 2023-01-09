@@ -1,19 +1,18 @@
 settings = {
     # This setting decides if we run model_train() or model_predict() -> train/test
-    "mode": "test",
+    "mode": "train",
 
     # File Paths:
-    "data_path": "nn_model\\data_jpg",
+    "api_folder": "application/static/api_folder/",
+    "data_path": "data_jpg",
     "test_path": "nn_model\\data_jpg\\test\\",
-    "model_weights": "nn_model\\Model_results\\model_95.pth",
+    "model_weights": "nn_model\\Model_results\\model_91.pth",
 
     # For Training:
-    "learning_rate": 0.00257,
+    "learning_rate": 0.00027,
     "weight_decay": 0.1,
     "batch_size": 20,
-    "num_epochs": 25,
+    "num_epochs": 100,
     "image_size": (400, 400),
 
-    # For testing:
-    "file_name": "*",  # * = ALL images in test_folder, if you want a specific image, enter filename here.
 }
