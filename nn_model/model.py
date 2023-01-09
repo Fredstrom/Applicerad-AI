@@ -3,7 +3,6 @@ import torch.nn as nn
 from settings import settings
 
 
-
 class CNN_model(nn.Module):
     def __init__(self, num_classes=2):
         self.width = settings["image_size"][0]
@@ -17,7 +16,6 @@ class CNN_model(nn.Module):
         # Image shape: (batch_size, 12, image_size)
         self.bn1 = nn.BatchNorm2d(num_features=12)
         self.relu1 = nn.ReLU()
-
         self.max_pool1 = nn.MaxPool2d(kernel_size=2)
         # Max pooling with kernel size 2 results in half the size of the original image.
 

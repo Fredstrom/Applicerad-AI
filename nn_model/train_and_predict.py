@@ -13,6 +13,7 @@ from torch.optim import Adam
 from torch.autograd import Variable
 from glob import glob
 from PIL import Image, ImageDraw, ImageFont
+import numpy as np
 
 
 def model_train():
@@ -86,6 +87,7 @@ def model_train():
 
 
 def predict_image(folder, file):
+    # TODO: Add documentation in a CSV-file containing labels.
     image_path = folder + file
     model = CNN_model()
     model.load_state_dict(torch.load(settings["model_weights"]))
@@ -100,7 +102,13 @@ def predict_image(folder, file):
     model.eval()
     with torch.no_grad():
         prediction = model(image_tensor)
+        confidence = torch.softmax(prediction, dim=1)
 
-    label = prediction.argmax().int()
-    return "Algae" if label == 1 else "Not Algae"
+        confidence, label = torch.max(confidence, dim=1)
+    label = prediction.argmax().float()
 
+    return ("Algae", f'{int(confidence.item() * 100)}%') if label == 1 \
+        else ("Not Algae", f'{int(confidence.item() * 100)}%')
+
+
+# TODO: Add a test function that shows incorrect predictions (prediction, label, image).
