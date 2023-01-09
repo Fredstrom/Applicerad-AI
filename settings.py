@@ -12,7 +12,7 @@ settings = {
     "weight_decay": 0.1,
     "batch_size": 20,
     "num_epochs": 25,
-    "image_size": (400, 400),
+    "image_size": (600, 600),
 
     # For testing:
     "file_name": "*",  # * = ALL images in test_folder, if you want a specific image, enter filename here.
