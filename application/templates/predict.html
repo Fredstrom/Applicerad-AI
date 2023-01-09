@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <img src="static/api_folder/{{ image }}"
+         alt="Kunde inte ladda bild"
+         style="width:500px;height:500px;">
+
+    <p>{{label}}</p>
+    <p>{{confidence}}</p>
+
+{% endblock %}
