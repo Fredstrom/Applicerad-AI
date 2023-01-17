@@ -11,9 +11,9 @@ import torch.nn as nn
 from torchvision.transforms import transforms
 from torch.optim import Adam
 from torch.autograd import Variable
-from glob import glob
-from PIL import Image, ImageDraw, ImageFont
-import numpy as np
+import glob
+from PIL import Image
+from datetime import datetime
 
 
 def model_train():
@@ -25,8 +25,8 @@ def model_train():
     train_loader = dm.train_loader
     val_loader = dm.val_loader
 
-    train_size = len(glob(dm.data + '/train/**/*.jpg'))
-    val_size = len(glob(dm.data + '/val/**/*.jpg'))
+    train_size = len(glob.glob(dm.data + '/train/**/*.jpg'))
+    val_size = len(glob.glob(dm.data + '/val/**/*.jpg'))
     print(f"Size of training set: {train_size}")
     print(f"Size of validation set: {val_size}")
     print("---" * 10)
@@ -86,9 +86,11 @@ def model_train():
         print("------" * 10)
 
 
-def predict_image(folder, file):
-    # TODO: Add documentation in a CSV-file containing labels.
-    image_path = folder + file
+def predict_image(folder, file, location="Not submitted"):
+    if folder != settings["test_path"]:
+        image_path = folder + file
+    else:
+        image_path = file
     model = CNN_model()
     model.load_state_dict(torch.load(settings["model_weights"]))
     model.eval()
@@ -106,9 +108,31 @@ def predict_image(folder, file):
 
         confidence, label = torch.max(confidence, dim=1)
     label = prediction.argmax().float()
-
+    save_results(label, confidence, file, location)
     return ("Algae", f'{int(confidence.item() * 100)}%') if label == 1 \
         else ("Not Algae", f'{int(confidence.item() * 100)}%')
 
 
+def save_results(label, confidence, file, location):
+    if not os.path.exists(settings["log_path"]):
+        os.makedirs(settings["log_path"])
+
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(f'{settings["log_path"]}logs.csv', "a+") as logs:
+        logs.write('\n')
+
+        logs.write(f'{file}, '
+                   f'{"Algae" if int(label) == 1 else "Not Algae"}, '
+                   f'{confidence.item() * 100:.0f}%, '
+                   f'{location}, '
+                   f'{timestamp}')
+
+
+def predict_folder(folder):
+    print(folder)
+    predictions = [predict_image(folder, image) for image in glob.glob(f"{folder}/*.jpg")]
+    print(predictions)
+
 # TODO: Add a test function that shows incorrect predictions (prediction, label, image).
+
+
