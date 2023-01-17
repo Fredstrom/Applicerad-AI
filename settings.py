@@ -7,7 +7,7 @@ settings = {
     "data_path": "data_jpg",
     "test_path": "nn_model\\data_jpg\\test\\",
     "model_weights": "nn_model\\Model_results\\model_91.pth",
-
+    "log_path": "nn_model/logs/",
     # For Training:
     "learning_rate": 0.00027,
     "weight_decay": 0.1,

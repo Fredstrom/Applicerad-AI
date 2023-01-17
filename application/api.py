@@ -34,7 +34,7 @@ async def upload_file(request: Request, file: UploadFile = File(...), location: 
 
     file.filename = f'{str(uuid.uuid4())[:8]}-{location}.jpg'
     location = location
-    file.filename = f'{uuid.uuid4()}.jpg'
+    file.filename = f'{str(uuid.uuid4())[:8]}-{location}.jpg'
     image = await file.read()
 
     with open(f'{settings["api_folder"]}{file.filename}', 'wb') as f:

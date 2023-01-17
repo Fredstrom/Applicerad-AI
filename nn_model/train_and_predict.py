@@ -120,7 +120,6 @@ def save_results(label, confidence, file, location):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open(f'{settings["log_path"]}logs.csv', "a+") as logs:
         logs.write('\n')
-
         logs.write(f'{file}, '
                    f'{"Algae" if int(label) == 1 else "Not Algae"}, '
                    f'{confidence.item() * 100:.0f}%, '
