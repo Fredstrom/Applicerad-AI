@@ -1,7 +1,7 @@
 from nn_model.train_and_predict import predict_image
 from settings import settings
 
-from fastapi import FastAPI, Request, UploadFile, File
+from fastapi import FastAPI, Request, UploadFile, File, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import uuid
@@ -20,9 +20,8 @@ async def home(request: Request):
 
 
 @app.post("/prediction")
-async def upload_file(request: Request, file: UploadFile = File(...)):
+async def upload_file(request: Request, file: UploadFile = File(...), location: str = Form()):
 
-    # TODO: Add location to user input.
     """
     Takes an image input and saves the image to static/[api_folder], then makes a prediction
     on the image using our model, saving the results in a dictionary and passes it to a HTML
@@ -33,6 +32,7 @@ async def upload_file(request: Request, file: UploadFile = File(...)):
     :return: HTMLTemplate(name, dict)
     """
 
+    location = location
     file.filename = f'{uuid.uuid4()}.jpg'
     image = await file.read()
 
@@ -43,4 +43,5 @@ async def upload_file(request: Request, file: UploadFile = File(...)):
     return templates.TemplateResponse("predict.html", {"request": request,
                                                        "label": label,
                                                        "confidence": confidence,
-                                                       "image": file.filename})
+                                                       "image": file.filename,
+                                                       "location": location})

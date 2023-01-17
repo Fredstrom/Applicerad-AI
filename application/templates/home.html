@@ -1,21 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action="http://127.0.0.1:8000/prediction"
-      method="post"
+    <form action="http://127.0.0.1:8000/prediction"
+          method="post"
+          enctype="multipart/form-data">
 
-      enctype="multipart/form-data">
+        <div class="form_row">
+            <!-- simple filebrowser -->
+            <label for="file">Choose your image:</label>
+            <input type="file" id="file" name="file">
 
-  <div class="form_row">
-      <!-- simple filebrowser -->
-    <label for="file">Choose your image:</label>
-    <input type="file" id="file" name="file">
-
-      <!-- send the form to /prediction using <form action> ... -->
-     <label class="label-checkbox item-content">
-      <input type="submit" name="submit" value="Send"/>
-    </label>
-  </div>
-</form>
+        </div>
+        <div class="form_row" style="padding-top: 1em">
+            <!-- send the form to /prediction using <form action> ... -->
+            <label for="location">Location</label>
+            <input type="text" name="location"/>
+        </div>
+        <div class="form_row" style="padding-top: 1em">
+            <label class="label-checkbox item-content">
+                <input type="submit" name="submit" value="Send"/>
+            </label>
+        </div>
+    </form>
 
 {% endblock %}

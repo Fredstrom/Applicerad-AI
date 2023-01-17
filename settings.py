@@ -6,12 +6,12 @@ settings = {
     "api_folder": "application/static/api_folder/",
     "data_path": "data_jpg",
     "test_path": "nn_model\\data_jpg\\test\\",
-    "model_weights": "nn_model\\Model_results\\model_91.pth",
+    "model_weights": "nn_model/Model_results/model_91.pth",
 
     # For Training:
-    "learning_rate": 0.00027,
-    "weight_decay": 0.1,
-    "batch_size": 20,
-    "num_epochs": 25,
+    "learning_rate": 0.00020,
+    "weight_decay": 0.15,
+    "batch_size": 24,
+    "num_epochs": 35,
     "image_size": (600, 600),
 }
