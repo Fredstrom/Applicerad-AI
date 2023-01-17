@@ -1,6 +1,7 @@
 # Our own options
-nn_model/data_jpg/
+/nn_model/data_jpg/
 .idea/
+*.DS_Store
 
 
 # Byte-compiled / optimized / DLL files
@@ -133,3 +134,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+

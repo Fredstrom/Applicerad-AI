@@ -36,7 +36,7 @@ class CNN_model(nn.Module):
         self.max_pool3 = nn.MaxPool2d(kernel_size=2)
 
         # Image shape: (batch_size, 6, image_size / 8)
-        self.fc = nn.Linear(in_features= int(self.width / 8) * int(self.height / 8) * 6, out_features=2)
+        self.fc = nn.Linear(in_features=int(self.width / 8) * int(self.height / 8) * 6, out_features=2)
 #
 
     def forward(self, x):

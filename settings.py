@@ -15,4 +15,9 @@ settings = {
     "num_epochs": 100,
     "image_size": (400, 400),
 
+    "learning_rate": 0.00020,
+    "weight_decay": 0.15,
+    "batch_size": 24,
+    "num_epochs": 35,
+    "image_size": (600, 600),
 }
