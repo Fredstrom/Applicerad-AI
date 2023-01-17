@@ -60,7 +60,7 @@ def model_train():
 
             train_accuracy += int(torch.sum(label.data == prediction))
         train_accuracy = train_accuracy / train_size * 100
-        train_loss = train_loss / train_size * 100
+        train_loss = (train_loss / train_size) * 100
 
         model.eval()
         val_accuracy = 0
@@ -72,7 +72,7 @@ def model_train():
             output = model(img)
             _, prediction = torch.max(output.data, 1)
             val_accuracy += int(torch.sum(label.data == prediction))
-        val_accuracy = val_accuracy / val_size * 100
+        val_accuracy = (val_accuracy / val_size) * 100
 
         print(f"Epoch: {epoch} / {num_epochs}")
         print(f"Train Loss: {train_loss:.0f}, Train Accuracy: {train_accuracy:.0f}%, Test Accuracy: {val_accuracy:.0f}%")
