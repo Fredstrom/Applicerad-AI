@@ -1,5 +1,5 @@
 # Our own options
-nn_model/data_jpg
+/nn_model/data_jpg/
 .idea/
 
 
@@ -133,3 +133,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
