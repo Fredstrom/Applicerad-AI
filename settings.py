@@ -9,12 +9,6 @@ settings = {
     "model_weights": "nn_model\\Model_results\\model_91.pth",
     "log_path": "nn_model/logs/",
     # For Training:
-    "learning_rate": 0.00027,
-    "weight_decay": 0.1,
-    "batch_size": 20,
-    "num_epochs": 100,
-    "image_size": (400, 400),
-
     "learning_rate": 0.00020,
     "weight_decay": 0.15,
     "batch_size": 24,
