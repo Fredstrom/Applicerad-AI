@@ -1,12 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <img src="static/api_folder/{{ image }}"
-         alt="Kunde inte ladda bild"
-         style="width:500px;height:500px;">
+<link rel="stylesheet" href="../static/style.css" xmlns="http://www.w3.org/1999/html">
+<div class="flex-container">
+        <div class="data_box">
+            <span>Prediction:</span> &nbsp; <span>{{label}}</span>
+            <br>
+            <br>
+            <span>Confidence:</span> &nbsp; <span>{{confidence}}</span>
+            <br>
+            <br>
+            <span>Location:</span> &nbsp; <span> {{ location }}</span>
+        </div>
 
-    <p>{{label}}</p>
-    <p>{{confidence}}</p>
-    <p>Location: {{ location }}</p>
+          <div class="image_box">
+            <img src="static/api_folder/{{ image }}"
+                 alt="Kunde inte ladda bild"
+                 style="width:500px;height:500px;">
+        </div>
 
+    </div>
 {% endblock %}
