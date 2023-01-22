@@ -60,7 +60,7 @@ input[type="submit"] {
 }
 
 
-form {
+form{
     color: white;
     height: 500px;
     width: 700px;
@@ -106,4 +106,38 @@ section h1 {
 
 section p {
     font-size: 1.5em;
+}
+
+.flex-container{
+    animation: fadeIn ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    display: flex;
+    width: 800px;
+    height: 400px;
+    color: white;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.data_box{
+    flex: 2;
+    font-size: 25px;
+    padding: 2%;
+    width: 400px;
+    height: 400px;
+}
+
+
+@keyframes fadeIn {
+    0%{
+    opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
