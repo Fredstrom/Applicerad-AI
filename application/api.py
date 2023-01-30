@@ -26,10 +26,15 @@ async def upload_file(request: Request, file: UploadFile = File(...), location: 
     on the image using our model, saving the results in a dictionary and passes it to a HTML
     template for visualisation.
 
-    :param request: default (Request-object)
-    :param file: Image from home.html - or any other form
-    :param location: String from form, containing the location the image was taken from
-    :return: HTMLTemplate(name, dict)
+    Parameters:
+    class request:
+        request (class from fastapi)
+    str file:
+        Image from form at home.html
+    str location:
+        String from form, containing the location the image was taken from
+
+    returns HTMLTemplate(name, dict)
     """
 
     file.filename = f'{str(uuid.uuid4())[:8]}-{location}.jpg'
