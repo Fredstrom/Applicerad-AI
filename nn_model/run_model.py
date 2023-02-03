@@ -1,4 +1,4 @@
-from nn_model.train_and_predict import model_train, predict_image, predict_folder
+from nn_model.train_and_predict import model_train, predict_folder
 from settings import settings
 
 

@@ -37,7 +37,6 @@ async def upload_file(request: Request, file: UploadFile = File(...), location: 
     returns HTMLTemplate(name, dict)
     """
 
-    file.filename = f'{str(uuid.uuid4())[:8]}-{location}.jpg'
     location = location
     file.filename = f'{str(uuid.uuid4())[:8]}-{location}.jpg'
     image = await file.read()

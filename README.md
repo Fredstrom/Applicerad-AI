@@ -4,6 +4,7 @@
 
 [Project description](#desc)  
 [How it works](#howitworks)  
+[Dataset review](#Dataset)
 [Our Challenges](#challenges)  
 [Future development](#Future_development)  
 [Installation and how to run](#install)  
@@ -34,26 +35,52 @@ We also save the images in our database, for further training, to make sure the 
 We decided to use a CNN model after testing different Machine Learning models, as well as a few deep learning models.   
    
 Machine Learning algorithms reviewed:
- - Naive Bayes
  - KNN
- - Decision Tree
- - Random Forest
+ - Random Forest  
+   
+
+      When evaluating our ML-models, we realized that the accuracy was very inconsistent. 
+      and the more complex data we gave the models, the more randomized our results got.
+ ![img_1.png](application/static/img_1.png)
 
 
 Deep Learning models reviewed:
  - CNN
  - RCNN
- - FastRCNN
- - YOLOv7
-
-<!--Add reviews from ML-models and add 
-statistics on predictions-->
-
-After reviewing the different approaches we decided to use a CNN, 
-due to having a better result on the predictions.
  
+        We got way better, and more consistent results on our Deep Learning models, 
+        especially the CNN model. We ended up with a accuracy on around 96%,
+        and felt a lot more confident on the performance of our CNN, 
+        and decided to go for a CNN.
+    ![img.png](application/static/img.png)
+
+
 We also decided to use FastAPI because it's one of the most lightweight
 API / web-frameworks to use, and it keeps getting constant updates for performance.
+
+<div id="Dataset"/>
+
+## Dataset review
+
+This is the class balance of the dataset we received, as you can see, we had a huge over representation of the Algae class, 
+resulting in the model defaulting for a positive prediction. We managed to get an accuracy on about 96% on the dataset, 
+but we quickly realized that the model was over fit on our current data.
+
+![img_2.png](application/static/img_2.png)
+
+
+To solve this, we decided to take our own pictures of water surfaces to add to our dataset, 
+and make sure we get a better class balance. After the new data was added we managed to get around 45% / 55% class balance
+
+This resulted in a better performance on the test data, and our model managed to correctly predict on more images, 
+at the cost of about 5% accuracy, which is as trade-off we're happy with.
+
+restrictions:  
+Since our dataset was limited to water surfaces only, we are forced to keep this in mind when doing our inference. 
+Right now we have to assume that the user are uploading images containing a water surface, until we manage to expand our
+dataset to handle all cases. Especially images containing grass, since this is the biggest
+issue for the model. 
+
 
 <div id="challenges"/>
 
@@ -112,9 +139,9 @@ where we can broadcast any recurring areas, where we have a possible algae outbr
 
 ## Contribution
 [Fredrik](https://github.com/Fredstrom)  
-[Anna](https://github.com/Fredstrom)  
-[Alexander Nyberg](https://github.com/Fredstrom)  
-[Lenny](https://github.com/Fredstrom)  
-[Alexander Amaechi](https://github.com/Fredstrom)  
+[Anna](https://github.com/QueenAnna)  
+[Alexander Nyberg](https://github.com/aanyberg)  
+[Lenny](https://github.com/lennyrydweissner)  
+[Alexander Amaechi](https://github.com/AlexanderAmaechi)  
 
 
