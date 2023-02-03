@@ -126,7 +126,7 @@ where we can broadcast any recurring areas, where we have a possible algae outbr
         
         3.  Open a terminal in your root, and enter the following command:
             uvicorn application.api:app --reload
-            This is going to start a local instance of FlasKAPI, and it will automatically load our model to our front-end.
+            This is going to start a local instance of FlaskAPI, and it will automatically load our model to our front-end.
         
         (4.)    We are using a settings.txt to keep our project easy to maintain, if you want to change any locations of your folders,
                 or if you want to change hyper-parameters for your own training-session. you have to change the settings in there.
