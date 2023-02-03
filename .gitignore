@@ -1,5 +1,7 @@
 # Our own options
-/nn_model/data_jpg/
+/nn_model/data_jpg/train
+/nn_model/data_jpg/val
+/nn_model/data_jpg/temp
 .idea/
 *.DS_Store
 
