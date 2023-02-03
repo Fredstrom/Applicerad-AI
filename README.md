@@ -140,7 +140,7 @@ where we can broadcast any recurring areas, where we have a possible algae outbr
 
 ## Contribution
 [Fredrik](https://github.com/Fredstrom)  
-[Anna](https://github.com/QueenAnna)  
+[Anna](https://github.com/QueeenAnna)  
 [Alexander Nyberg](https://github.com/aanyberg)  
 [Lenny](https://github.com/lennyrydweissner)  
 [Alexander Amaechi](https://github.com/AlexanderAmaechi)  
