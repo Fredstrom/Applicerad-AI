@@ -1,18 +1,5 @@
 # Algae blooms
 
-## Table of contents
-
-[Project description](#desc)  
-[How it works](#howitworks)  
-[Dataset review](#Dataset)  
-[Our Challenges](#challenges)  
-[Future development](#Future_development)  
-[Installation and how to run](#install)  
-[Contribution](#credits)  
-
-<div id="desc"/>
-
-## Project description
 Algae blooms are a massive amount of 
 microscopic algae and cyanobacteria, 
 most commonly appearing during spring 
@@ -25,6 +12,15 @@ This is a rising issue, and more and more actors in Sweden are investing
 time and resources into warning about possible Algae blooming.
 
 We've received an assigment to build an automated system, that can detect algae blooming through images of water surfaces, preferably using Deep learning.
+## Table of contents
+
+[How it works](#howitworks)  
+[Dataset review](#Dataset)  
+[Our Challenges](#challenges)  
+[Future development](#Future_development)  
+[Installation and how to run](#install)  
+[Contribution](#credits)  
+
 
 <div id="howitworks"/>
 
@@ -98,7 +94,7 @@ We're not front-end developers, so we have decided on a minimal design of the pa
 <div id="Future_development"/>
 
 ## Future development
-<!-- ADD MORE HERE LATER ...-->
+
 Our plan for the future of this project is to deploy the service as it is, and start gathering data from the users, in order to solve our data-problem.
 Gathering data from the users, solves multiple problems.
 
@@ -120,7 +116,7 @@ where we can broadcast any recurring areas, where we have a possible algae outbr
 ## Installation and how to run
 <!-- Add a REQUIREMENTS.TXT-->
     How to install:
-        1.  fork the project, and install the requirements.txt in your local enviroemnt.
+        1.  fork the project, and install the requirements.txt in your local enviroment.
             make sure you get the data-folders containing our data, if you want to train the model on your own.
             if not, we provide a pre-trained model, with CUDA.
         
