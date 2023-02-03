@@ -4,7 +4,7 @@
 
 [Project description](#desc)  
 [How it works](#howitworks)  
-[Dataset review](#Dataset)
+[Dataset review](#Dataset)  
 [Our Challenges](#challenges)  
 [Future development](#Future_development)  
 [Installation and how to run](#install)  
@@ -41,7 +41,8 @@ Machine Learning algorithms reviewed:
 
       When evaluating our ML-models, we realized that the accuracy was very inconsistent. 
       and the more complex data we gave the models, the more randomized our results got.
- ![img_1.png](application/static/img_1.png)
+ 
+![img_1.png](application/static/img_1.png)
 
 
 Deep Learning models reviewed:
